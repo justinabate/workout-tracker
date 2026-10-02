@@ -21,7 +21,33 @@ a{color:var(--accent)} button,input{font:inherit}.wrap{max-width:1180px;margin:a
 details{border-top:1px solid var(--line2);background:#fbfcfd}details summary{cursor:pointer;padding:10px 15px;font-weight:650}.detailbody{padding:0 15px 15px}.diagram{display:block;width:100%;max-height:620px;object-fit:contain;background:#111;border-radius:10px;border:1px solid var(--line);margin-top:10px}.diagram-note{font-size:.82rem;color:var(--muted)}
 .rest{position:fixed;right:16px;bottom:16px;z-index:30;background:#fff;border:1px solid var(--line);border-radius:14px;box-shadow:var(--shadow);padding:10px;display:flex;align-items:center;gap:8px}.rest strong{min-width:48px;text-align:center;font-variant-numeric:tabular-nums}.small{font-size:.82rem;color:var(--muted)}
 .footer{padding:30px 0;color:var(--muted);font-size:.85rem}.hidden{display:none!important}
-@media(max-width:680px){.wrap{padding:12px}.sticky{margin:14px -12px 0;padding:8px 12px}.hero{padding:17px}.ex-top{display:block}.scheme{margin-top:6px}.logtable th,.logtable td{padding:5px}.rest{left:10px;right:10px;bottom:10px;justify-content:center}.diagram{max-height:none}}
+button:focus-visible,a:focus-visible,input:focus-visible,summary:focus-visible{outline:3px solid var(--accent);outline-offset:3px}
+@media(max-width:680px){
+  .wrap{padding:12px;padding-bottom:calc(100px + env(safe-area-inset-bottom,0px))}
+  .sticky{margin:14px -12px 0;padding:8px 12px}
+  .daynav{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:6px;overflow:visible}
+  .daynav button{white-space:normal;padding:8px 4px;font-size:.85rem}
+  .btn{min-height:44px}
+  .hero{padding:17px}
+  .summary table{min-width:0;table-layout:fixed}
+  .summary th,.summary td{padding:9px 7px;overflow-wrap:anywhere;font-size:.875rem}
+  .summary th:first-child{width:14%}
+  .summary th:nth-child(2){width:30%}
+  .ex-main{padding:12px}
+  .ex-top{display:block}
+  .scheme{margin-top:6px}
+  .progress{min-width:0;width:100%}
+  .logtable{table-layout:fixed}
+  .logtable th,.logtable td{padding:4px}
+  .logtable th:first-child{width:14%}
+  .logtable th:last-child{width:20%}
+  .logtable input[type=number]{min-width:0;min-height:44px;padding:5px;font-size:16px}
+  .donebox{width:24px;height:24px;margin:0;vertical-align:middle}
+  .rest{left:10px;right:10px;bottom:calc(10px + env(safe-area-inset-bottom,0px));justify-content:center;gap:5px;padding:8px}
+  .rest .btn{padding:8px;font-size:.875rem}
+  .rest strong{min-width:40px}
+  .diagram{max-height:none}
+}
 @media print{.sticky,.rest,.toolbar,.logtable{display:none!important}.day{display:block!important}.exercise{break-inside:avoid;box-shadow:none}.wrap{max-width:none}.hero{box-shadow:none}}
 </style>
 </head>
