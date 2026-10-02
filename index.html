@@ -15,15 +15,16 @@ a{color:var(--accent)} button,input{font:inherit}.wrap{max-width:1180px;margin:a
 .daynav .active{background:var(--ink);color:#fff;border-color:var(--ink)}
 .summary{margin:18px 0;background:var(--panel);border:1px solid var(--line);border-radius:14px;overflow:auto}.summary table{width:100%;border-collapse:collapse;min-width:700px}.summary th,.summary td{border:1px solid #d3d6db;padding:10px 12px;text-align:left;vertical-align:top}.summary th{background:#f1f3f5}
 .day{display:none}.day.active{display:block}.day-head{margin:20px 0 12px;display:flex;align-items:end;justify-content:space-between;gap:14px;flex-wrap:wrap}.day-head h2{margin:0;font-size:1.6rem}.day-head p{margin:2px 0 0;color:var(--muted)}
-.progress{min-width:220px}.bar{height:9px;background:#e7e9ed;border-radius:999px;overflow:hidden}.bar>span{display:block;height:100%;width:0;background:var(--ok);transition:width .2s}.pct{font-size:.82rem;color:var(--muted);margin-top:3px;text-align:right}
-.exercise{background:var(--panel);border:1px solid var(--line);border-radius:14px;margin:12px 0;box-shadow:0 3px 14px rgba(16,24,40,.035);overflow:hidden}.ex-main{padding:15px}.ex-top{display:flex;align-items:flex-start;justify-content:space-between;gap:14px}.ex-top h3{margin:0;font-size:1.08rem}.tag{display:inline-block;font-size:.72rem;padding:3px 7px;border-radius:999px;background:#f0f2f5;color:#475467;margin-left:6px}.tag.db{background:var(--soft);color:#1849a9}.scheme{font-weight:700;white-space:nowrap}.cue{margin:7px 0 10px;color:#475467}.external{font-size:.84rem;text-decoration:none}.external:hover{text-decoration:underline}
+.progress{width:100%;min-width:0;margin-top:10px}.bar{height:9px;background:#e7e9ed;border-radius:999px;overflow:hidden}.bar>span{display:block;height:100%;width:0;background:var(--ok);transition:width .2s}.pct{font-size:.82rem;color:var(--muted);margin-top:3px;text-align:right}
+.exercise{background:var(--panel);border:1px solid var(--line);border-radius:14px;margin:12px 0;box-shadow:0 3px 14px rgba(16,24,40,.035);overflow:hidden}.ex-main{padding:15px}.ex-top{display:flex;align-items:flex-start;justify-content:space-between;gap:14px}.ex-top h3{display:flex;align-items:baseline;gap:8px;margin:0;font-size:1.08rem}.tag{display:inline-block;font-size:.72rem;padding:3px 7px;border-radius:999px;background:#f0f2f5;color:#475467;flex-shrink:0}.tag.db{background:var(--soft);color:#1849a9}.scheme{font-weight:700;white-space:nowrap}.cue{margin:7px 0 10px;color:#475467}.external{font-size:.84rem;text-decoration:none}.external:hover{text-decoration:underline}
 .logtable{width:100%;border-collapse:collapse;margin-top:10px}.logtable th,.logtable td{border:1px solid #d3d6db;padding:7px;text-align:center}.logtable th{background:#f5f6f7;font-size:.82rem}.logtable input[type=number]{width:100%;min-width:58px;border:1px solid var(--line);border-radius:7px;padding:6px;background:#fff}.donebox{width:19px;height:19px}
 details{border-top:1px solid var(--line2);background:#fbfcfd}details summary{cursor:pointer;padding:10px 15px;font-weight:650}.detailbody{padding:0 15px 15px}.diagram{display:block;width:100%;max-height:620px;object-fit:contain;background:#111;border-radius:10px;border:1px solid var(--line);margin-top:10px}.diagram-note{font-size:.82rem;color:var(--muted)}
-.rest{position:fixed;right:16px;bottom:16px;z-index:30;background:#fff;border:1px solid var(--line);border-radius:14px;box-shadow:var(--shadow);padding:10px;display:flex;align-items:center;gap:8px}.rest strong{min-width:48px;text-align:center;font-variant-numeric:tabular-nums}.small{font-size:.82rem;color:var(--muted)}
+.guidance{display:block;margin-top:10px;border:1px solid var(--line2);border-radius:8px;background:#fbfcfd;font-size:.875rem;font-weight:650}.external.guidance{padding:10px 15px}.previous{color:var(--muted);font-size:.82rem;overflow-wrap:anywhere}
+.rest{margin-top:8px;background:#fff;border:1px solid var(--line);border-radius:14px;box-shadow:var(--shadow);padding:10px;display:flex;align-items:center;gap:8px}.rest strong{min-width:48px;text-align:center;font-variant-numeric:tabular-nums}.small{font-size:.82rem;color:var(--muted)}
 .footer{padding:30px 0;color:var(--muted);font-size:.85rem}.hidden{display:none!important}
 button:focus-visible,a:focus-visible,input:focus-visible,summary:focus-visible{outline:3px solid var(--accent);outline-offset:3px}
 @media(max-width:680px){
-  .wrap{padding:12px;padding-bottom:calc(100px + env(safe-area-inset-bottom,0px))}
+  .wrap{padding:12px}
   .sticky{margin:14px -12px 0;padding:8px 12px}
   .daynav{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:6px;overflow:visible}
   .daynav button{white-space:normal;padding:8px 4px;font-size:.85rem}
@@ -39,11 +40,13 @@ button:focus-visible,a:focus-visible,input:focus-visible,summary:focus-visible{o
   .progress{min-width:0;width:100%}
   .logtable{table-layout:fixed}
   .logtable th,.logtable td{padding:4px}
-  .logtable th:first-child{width:14%}
-  .logtable th:last-child{width:20%}
+  .logtable th:first-child{width:10%}
+  .logtable th:nth-child(2){width:25%}
+  .logtable th{font-size:.72rem;overflow-wrap:anywhere}
+  .logtable th:last-child{width:15%}
   .logtable input[type=number]{min-width:0;min-height:44px;padding:5px;font-size:16px}
   .donebox{width:24px;height:24px;margin:0;vertical-align:middle}
-  .rest{left:10px;right:10px;bottom:calc(10px + env(safe-area-inset-bottom,0px));justify-content:center;gap:5px;padding:8px}
+  .rest{justify-content:center;gap:5px;padding:8px}
   .rest .btn{padding:8px;font-size:.875rem}
   .rest strong{min-width:40px}
   .diagram{max-height:none}
@@ -56,13 +59,9 @@ button:focus-visible,a:focus-visible,input:focus-visible,summary:focus-visible{o
 <header class="hero">
   <h1>5-Day Resistance Training Plan</h1>
   <p><strong>Inflight Fitness 3070 + dumbbells</strong></p>
-  <p>Suggested volume: 2–4 sets per exercise, generally 8–15 reps. Warm up 5–8 minutes, use controlled tempo, work around RPE 7–9, and rest 60–120 seconds.</p>
-  <div class="toolbar"><button class="btn primary" id="resetWeek">Reset week</button><button class="btn" onclick="window.print()">Print plan</button><span class="small" id="saveStatus">Progress saves automatically on this device.</span></div>
+  <p>Warm up 5–8 minutes <br/>Volume: 2–4 sets per exercise, 8–15 reps each. <br/>Use controlled tempo, work around RPE 7–9.<br/>Rest 60–120 seconds.</p>
+  <div class="toolbar"><button class="btn primary" id="resetWeek">Reset week</button><button class="btn" onclick="window.print()">Print plan</button><span class="small" id="saveStatus">Progress saves automatically on this device. Reset week saves completed sets to Previous.</span></div>
 </header>
-
-<div class="sticky"><nav class="daynav" aria-label="Training days">
-<button class="btn active" data-day="1">Day 1 · Push</button><button class="btn" data-day="2">Day 2 · Pull</button><button class="btn" data-day="3">Day 3 · Legs</button><button class="btn" data-day="4">Day 4 · Upper</button><button class="btn" data-day="5">Day 5 · Full body</button>
-</nav></div>
 
 <section class="summary">
 <table><thead><tr><th>Day</th><th>Focus</th><th>Exercises</th></tr></thead><tbody>
@@ -74,11 +73,16 @@ button:focus-visible,a:focus-visible,input:focus-visible,summary:focus-visible{o
 </tbody></table>
 </section>
 
-<main id="days"></main>
-<footer class="footer">Progress is stored in your browser via localStorage. GitHub Pages can host this as a completely static site; no server or database is required.</footer>
+<div class="sticky"><nav class="daynav" aria-label="Training days">
+<button class="btn active" data-day="1">1 · Push</button><button class="btn" data-day="2">2 · Pull</button><button class="btn" data-day="3">3 · Legs</button><button class="btn" data-day="4">4 · Upper</button><button class="btn" data-day="5">5 · Full body</button>
+</nav>
+<div class="rest" aria-label="Rest timer"><span class="small">Rest</span><strong id="timer">0:00</strong><button class="btn" data-rest="60">60s</button><button class="btn" data-rest="90">90s</button><button class="btn" data-rest="120">120s</button><button class="btn" id="stopTimer">Stop</button></div>
+<div class="progress"><div class="bar" id="dayProgress" role="progressbar" aria-label="Day 1 progress" aria-valuemin="0" aria-valuemax="100" aria-valuenow="0"><span id="progressFill"></span></div><div class="pct" id="progressText">Day 1 · 0% complete</div></div>
 </div>
 
-<div class="rest" aria-label="Rest timer"><span class="small">Rest</span><strong id="timer">0:00</strong><button class="btn" data-rest="60">60s</button><button class="btn" data-rest="90">90s</button><button class="btn" data-rest="120">120s</button><button class="btn" id="stopTimer">Stop</button></div>
+<main id="days"></main>
+<footer class="footer">Progress data stored in-browser via localStorage.<br/>GitHub Pages hosts this as a static site; no server or database required.</footer>
+</div>
 
 <script>
 const machine={
@@ -106,21 +110,72 @@ const db={
  carry:{name:'DB farmer carry',scheme:'4 × 30–60 sec',cue:'Keep tall posture and ribs down; walk with controlled steps.',url:'https://www.muscleandstrength.com/exercises/dumbbell-farmers-walk.html'}
 };
 const plan=[
- {title:'Day 1: Push strength',sub:'Chest, shoulders, triceps',items:[machine.chest,machine.shoulder,machine.triceps,db.lateral]},
- {title:'Day 2: Pull strength',sub:'Back, biceps, rear delts',items:[machine.lat,machine.row,machine.biceps,db.rearfly,db.hammer]},
- {title:'Day 3: Legs',sub:'Quads, hamstrings, posterior chain, calves',items:[machine.legext,machine.legcurl,db.goblet,db.rdl,db.calf]},
- {title:'Day 4: Upper volume',sub:'Moderate-rep upper-body volume',items:[{...machine.incline,scheme:'3 × 8–12'},{...machine.lat,scheme:'3 × 10–12',cue:'Pull to the upper chest; avoid rocking; use a slow eccentric.'},{...machine.row,scheme:'3 × 10–12',cue:'Pull to the mid-section; squeeze the back; reach forward under control.'},{...machine.triceps,scheme:'2–3 × 12–15',cue:'Finish with elbows extended; do not shrug.'},db.bench,db.pullover]},
- {title:'Day 5: Lower + full body',sub:'Lower-body work plus a press and loaded carry',items:[machine.decline,{...machine.legext,scheme:'3 × 12–15',cue:'Use a controlled extension; pause briefly; lower slowly.'},{...machine.legcurl,scheme:'3 × 12–15',cue:'Curl to full contraction without lifting the hips; return slowly.'},db.lunge,db.carry]}
+ {title:'Day 1: Push strength',sub:'Targets: Chest, shoulders, triceps',items:[machine.chest,machine.shoulder,machine.triceps,db.lateral]},
+ {title:'Day 2: Pull strength',sub:'Targets: Back, biceps, rear delts',items:[machine.lat,machine.row,machine.biceps,db.rearfly,db.hammer]},
+ {title:'Day 3: Legs',sub:'Targets: Quads, hamstrings, posterior chain, calves',items:[machine.legext,machine.legcurl,db.goblet,db.rdl,db.calf]},
+ {title:'Day 4: Upper volume',sub:'Target: moderate-rep, upper-body volume',items:[{...machine.incline,scheme:'3 × 8–12'},{...machine.lat,scheme:'3 × 10–12',cue:'Pull to the upper chest; avoid rocking; use a slow eccentric.'},{...machine.row,scheme:'3 × 10–12',cue:'Pull to the mid-section; squeeze the back; reach forward under control.'},{...machine.triceps,scheme:'2–3 × 12–15',cue:'Finish with elbows extended; do not shrug.'},db.bench,db.pullover]},
+ {title:'Day 5: Lower + full body',sub:'Target: lower-body work, plus a press and a loaded carry',items:[machine.decline,{...machine.legext,scheme:'3 × 12–15',cue:'Use a controlled extension; pause briefly; lower slowly.'},{...machine.legcurl,scheme:'3 × 12–15',cue:'Curl to full contraction without lifting the hips; return slowly.'},db.lunge,db.carry]}
 ];
 function maxSets(s){const m=s.match(/(\d)(?:–(\d))?\s*×/);return m?+(m[2]||m[1]):3}
-function exerciseCard(ex,di,ei){const dbx=!!ex.url, n=maxSets(ex.scheme);let rows='';for(let s=1;s<=n;s++)rows+=`<tr><td>${s}</td><td><input type="number" inputmode="decimal" min="0" step="0.5" data-key="d${di}e${ei}s${s}w" aria-label="Weight set ${s}"></td><td><input type="number" inputmode="numeric" min="0" step="1" data-key="d${di}e${ei}s${s}r" aria-label="Reps set ${s}"></td><td><input class="donebox" type="checkbox" data-key="d${di}e${ei}s${s}d" aria-label="Complete set ${s}"></td></tr>`;
-return `<article class="exercise"><div class="ex-main"><div class="ex-top"><div><h3>${dbx?`<a href="${ex.url}" target="_blank" rel="noopener">${ex.name}</a>`:ex.name}<span class="tag ${dbx?'db':''}">${dbx?'Dumbbell':'Inflight 3070'}</span></h3>${dbx?'<a class="external" href="'+ex.url+'" target="_blank" rel="noopener">Open exercise demo ↗</a>':''}</div><div class="scheme">${ex.scheme}</div></div><p class="cue">${ex.cue}</p><table class="logtable"><thead><tr><th>Set</th><th>Weight</th><th>Reps / sec</th><th>Done</th></tr></thead><tbody>${rows}</tbody></table></div>${ex.details?`<details><summary>Instructions + Inflight diagram</summary><div class="detailbody"><p>${ex.details}</p><p class="diagram-note">The original Inflight instruction image is shown in full so all diagram labels and printed instructions remain available.</p><img class="diagram" src="${ex.img}" alt="${ex.name} Inflight Fitness 3070 instruction diagram" loading="lazy"></div></details>`:''}</article>`}
-function render(){document.querySelector('#days').innerHTML=plan.map((d,di)=>`<section class="day ${di===0?'active':''}" data-daypanel="${di+1}"><div class="day-head"><div><h2>${d.title}</h2><p>${d.sub}. Progression: add reps first, then weight. Stop if joint pain changes movement quality.</p></div><div class="progress"><div class="bar"><span id="bar${di+1}"></span></div><div class="pct" id="pct${di+1}">0% complete</div></div></div>${d.items.map((e,ei)=>exerciseCard(e,di+1,ei+1)).join('')}</section>`).join('');restore();updateProgress()}
+const historyKey='workout-history-v1';
+function readHistory(){try{return JSON.parse(localStorage.getItem(historyKey))||{}}catch{return {}}}
+function previousSet(ex,set){
+  const record=readHistory()[ex.name]?.[set];
+  if(!record || !Number.isFinite(record.weight) || !Number.isFinite(record.reps))return '—';
+  return `${record.weight}lb × ${record.reps}${ex.name===db.carry.name?'s':''}`;
+}
+function archiveWeek(){
+  const history=readHistory();
+  plan.forEach((day,di)=>day.items.forEach((ex,ei)=>{
+    const sets={};
+    for(let set=1;set<=maxSets(ex.scheme);set++){
+      const key=`fit-d${di+1}e${ei+1}s${set}`;
+      const weight=localStorage.getItem(key+'w'),reps=localStorage.getItem(key+'r');
+      if(localStorage.getItem(key+'d')==='1' && weight!==null && weight!=='' && reps!==null && reps!=='' && Number.isFinite(+weight) && +weight>=0 && Number.isFinite(+reps) && +reps>0){
+        sets[set]={weight:+weight,reps:+reps};
+      }
+    }
+    if(Object.keys(sets).length)history[ex.name]=sets;
+  }));
+  localStorage.setItem(historyKey,JSON.stringify(history));
+}
+function exerciseCard(ex,di,ei){
+  const dbx=!!ex.url,n=maxSets(ex.scheme);
+  let rows='';
+  for(let set=1;set<=n;set++)rows+=`<tr><td>${set}</td><td class="previous">${previousSet(ex,set)}</td><td><input type="number" inputmode="decimal" min="0" step="0.5" data-key="d${di}e${ei}s${set}w" aria-label="Weight set ${set}"></td><td><input type="number" inputmode="numeric" min="0" step="1" data-key="d${di}e${ei}s${set}r" aria-label="Reps set ${set}"></td><td><input class="donebox" type="checkbox" data-key="d${di}e${ei}s${set}d" aria-label="Complete set ${set}"></td></tr>`;
+  const guidance=dbx
+    ? `<a class="external guidance" href="${ex.url}" target="_blank" rel="noopener">Open exercise demo ↗</a>`
+    : `<details class="guidance"><summary>Instructions + Inflight diagram</summary><div class="detailbody"><p>${ex.details}</p><p class="diagram-note">Original inflight instruction image shown in full:</p><img class="diagram" src="${ex.img}" alt="${ex.name} Inflight Fitness 3070 instruction diagram" loading="lazy"></div></details>`;
+  return `<article class="exercise"><div class="ex-main"><div class="ex-top"><h3><span class="tag ${dbx?'db':''}">${dbx?'Dumbbell':'Inflight 3070'}</span><span>${ex.name}</span></h3><div class="scheme">${ex.scheme}</div></div>${guidance}<p class="cue">${ex.cue}</p><table class="logtable"><thead><tr><th scope="col">Set</th><th scope="col" title="Last completed workout saved when resetting the week">Previous</th><th scope="col">Weight</th><th scope="col">Reps / sec</th><th scope="col">Done</th></tr></thead><tbody>${rows}</tbody></table></div></article>`;
+}
+function render(){document.querySelector('#days').innerHTML=plan.map((d,di)=>`<section class="day ${di===0?'active':''}" data-daypanel="${di+1}"><div class="day-head"><div><h2>${d.title}</h2><p>${d.sub}.<br/>Progression: add reps first, then weight.<br/>Stop if joint pain changes movement quality.</p></div></div>${d.items.map((e,ei)=>exerciseCard(e,di+1,ei+1)).join('')}</section>`).join('');restore();updateProgress()}
 function restore(){document.querySelectorAll('[data-key]').forEach(el=>{const v=localStorage.getItem('fit-'+el.dataset.key);if(v!==null){if(el.type==='checkbox')el.checked=v==='1';else el.value=v}el.addEventListener('input',save);el.addEventListener('change',save)})}
 function save(e){const el=e.target;localStorage.setItem('fit-'+el.dataset.key,el.type==='checkbox'?(el.checked?'1':'0'):el.value);document.querySelector('#saveStatus').textContent='Saved locally.';updateProgress()}
-function updateProgress(){plan.forEach((_,i)=>{const p=document.querySelector(`[data-daypanel="${i+1}"]`), boxes=[...p.querySelectorAll('.donebox')], done=boxes.filter(x=>x.checked).length, pct=boxes.length?Math.round(done/boxes.length*100):0;document.querySelector('#bar'+(i+1)).style.width=pct+'%';document.querySelector('#pct'+(i+1)).textContent=pct+'% complete'})}
-document.querySelectorAll('[data-day]').forEach(b=>b.addEventListener('click',()=>{document.querySelectorAll('[data-day]').forEach(x=>x.classList.remove('active'));b.classList.add('active');document.querySelectorAll('.day').forEach(x=>x.classList.toggle('active',x.dataset.daypanel===b.dataset.day));window.scrollTo({top:document.querySelector('.summary').offsetTop-60,behavior:'smooth'})}));
-document.querySelector('#resetWeek').addEventListener('click',()=>{if(confirm('Clear all saved weights, reps and completion checks?')){Object.keys(localStorage).filter(k=>k.startsWith('fit-')).forEach(k=>localStorage.removeItem(k));document.querySelectorAll('[data-key]').forEach(el=>{if(el.type==='checkbox')el.checked=false;else el.value=''});updateProgress()}});
+function updateProgress(){
+  const panel=document.querySelector('.day.active');
+  if(!panel)return;
+  const boxes=[...panel.querySelectorAll('.donebox')],done=boxes.filter(x=>x.checked).length;
+  const pct=boxes.length?Math.round(done/boxes.length*100):0;
+  document.querySelector('#progressFill').style.width=pct+'%';
+  document.querySelector('#progressText').textContent=`Day ${panel.dataset.daypanel} · ${pct}% complete`;
+  const bar=document.querySelector('#dayProgress');
+  bar.setAttribute('aria-valuenow',pct);
+  bar.setAttribute('aria-label',`Day ${panel.dataset.daypanel} progress`);
+}
+document.querySelectorAll('[data-day]').forEach(b=>b.addEventListener('click',()=>{document.querySelectorAll('[data-day]').forEach(x=>x.classList.remove('active'));b.classList.add('active');document.querySelectorAll('.day').forEach(x=>x.classList.toggle('active',x.dataset.daypanel===b.dataset.day));updateProgress();window.scrollTo({top:document.querySelector('#days').getBoundingClientRect().top+window.scrollY-document.querySelector('.sticky').offsetHeight,behavior:'smooth'})}));
+document.querySelector('#resetWeek').addEventListener('click',()=>{
+  if(!confirm('Save completed sets to Previous and clear this week’s weights, reps and completion checks?'))return;
+  archiveWeek();
+  document.querySelectorAll('[data-key]').forEach(el=>{
+    localStorage.removeItem('fit-'+el.dataset.key);
+    if(el.type==='checkbox')el.checked=false;else el.value='';
+  });
+  plan.forEach((day,di)=>day.items.forEach((ex,ei)=>{
+    document.querySelectorAll(`[data-daypanel="${di+1}"] .exercise`)[ei].querySelectorAll('.previous').forEach((cell,index)=>cell.textContent=previousSet(ex,index+1));
+  }));
+  document.querySelector('#saveStatus').textContent='Week reset. Completed sets saved to Previous.';
+  updateProgress();
+});
 let t=null,remaining=0;function draw(){const m=Math.floor(remaining/60),s=remaining%60;document.querySelector('#timer').textContent=`${m}:${String(s).padStart(2,'0')}`}
 document.querySelectorAll('[data-rest]').forEach(b=>b.addEventListener('click',()=>{clearInterval(t);remaining=+b.dataset.rest;draw();t=setInterval(()=>{remaining--;draw();if(remaining<=0){clearInterval(t);if(navigator.vibrate)navigator.vibrate([160,80,160]);document.title='Rest complete — Training Plan';setTimeout(()=>document.title='5-Day Resistance Training Plan — Inflight 3070 + Dumbbells',2500)}},1000)}));document.querySelector('#stopTimer').addEventListener('click',()=>{clearInterval(t);remaining=0;draw()});
 render();
