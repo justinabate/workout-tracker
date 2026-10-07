@@ -1,0 +1,37 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="theme-color" content="#f7f8fa">
+<title>Exercise Library — Inflight 3070 + Dumbbells</title>
+<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+<main class="wrap library">
+<header class="hero">
+  <h1>Exercise library</h1>
+  <p>Browse exercises and expand their instructions or demo videos.</p>
+  <nav aria-label="Exercise library navigation"><a href="index.html">← Workout tracker</a><a href="#inflight-3070">Inflight 3070</a><a href="#dumbbell">Dumbbell</a></nav>
+</header>
+<section id="inflight-3070" aria-labelledby="inflight-heading"><h2 id="inflight-heading">Inflight 3070</h2><div id="machine-exercises"></div></section>
+<section id="dumbbell" aria-labelledby="dumbbell-heading"><h2 id="dumbbell-heading">Dumbbell</h2><div id="dumbbell-exercises"></div></section>
+</main>
+<script src="exercises.js"></script>
+<script>
+function libraryCard(ex){
+  return `<article class="exercise" id="${exerciseId(ex)}"><div class="ex-main"><div class="ex-top"><h3>${exerciseName(ex)}</h3></div><p class="cue">${ex.cue}</p>${exerciseGuidance(ex)}</div></article>`;
+}
+for(const [id,exercises] of [['machine-exercises',machine],['dumbbell-exercises',db]]){
+  document.getElementById(id).innerHTML=Object.values(exercises).sort((a,b)=>exerciseName(a).localeCompare(exerciseName(b))).map(libraryCard).join('');
+}
+// Scroll after rendering so direct links work on a fresh page load.
+function scrollToExercise(){
+  const target=document.getElementById(location.hash.slice(1));
+  if(target)target.scrollIntoView({behavior:'instant',block:'start'});
+}
+scrollToExercise();
+window.addEventListener('hashchange',scrollToExercise);
+</script>
+</body>
+</html>

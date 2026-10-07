@@ -5,71 +5,24 @@
 <meta name="viewport" content="width=device-width,initial-scale=1" />
 <meta name="theme-color" content="#f7f8fa" />
 <title>5-Day Resistance Training Plan — Inflight 3070 + Dumbbells</title>
-<style>
-:root{--bg:#f7f8fa;--panel:#fff;--ink:#1f2937;--muted:#667085;--line:#d6d9de;--line2:#e6e8eb;--accent:#155eef;--soft:#eef4ff;--ok:#137333;--shadow:0 8px 28px rgba(16,24,40,.07)}
-*{box-sizing:border-box} html{scroll-behavior:smooth} body{margin:0;background:var(--bg);color:var(--ink);font-family:Inter,ui-sans-serif,-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;line-height:1.45}
-a{color:var(--accent)} button,input{font:inherit}.wrap{max-width:1180px;margin:auto;padding:18px}.hero{background:linear-gradient(135deg,#fff,#f1f5fb);border:1px solid var(--line);border-radius:18px;padding:22px;box-shadow:var(--shadow)}
-.hero h1{margin:0 0 6px;font-size:clamp(1.65rem,4vw,2.35rem);line-height:1.1}.hero p{margin:6px 0;color:var(--muted)}
-.toolbar{display:flex;gap:10px;flex-wrap:wrap;margin-top:14px}.btn{border:1px solid var(--line);background:#fff;padding:9px 12px;border-radius:10px;cursor:pointer}.btn:hover{background:#f7f7f8}.btn.primary{background:var(--accent);color:#fff;border-color:var(--accent)}
-.sticky{position:sticky;top:0;z-index:20;background:rgba(247,248,250,.94);backdrop-filter:blur(10px);border-bottom:1px solid var(--line2);margin:18px -18px 0;padding:10px 18px}.daynav{display:flex;gap:8px;overflow-x:auto;scrollbar-width:thin}.daynav button{white-space:nowrap}
-.daynav .active{background:var(--ink);color:#fff;border-color:var(--ink)}
-.summary{margin:18px 0;background:var(--panel);border:1px solid var(--line);border-radius:14px;overflow:auto}.summary table{width:100%;border-collapse:collapse;min-width:700px}.summary th,.summary td{border:1px solid #d3d6db;padding:10px 12px;text-align:left;vertical-align:top}.summary th{background:#f1f3f5}
-.day{display:none}.day.active{display:block}.day-head{margin:20px 0 12px;display:flex;align-items:end;justify-content:space-between;gap:14px;flex-wrap:wrap}.day-head h2{margin:0;font-size:1.6rem}.day-head p{margin:2px 0 0;color:var(--muted)}
-.progress{width:100%;min-width:0;margin-top:10px}.bar{height:9px;background:#e7e9ed;border-radius:999px;overflow:hidden}.bar>span{display:block;height:100%;width:0;background:var(--ok);transition:width .2s}.pct{font-size:.82rem;color:var(--muted);margin-top:3px;text-align:right}
-.exercise{background:var(--panel);border:1px solid var(--line);border-radius:14px;margin:12px 0;box-shadow:0 3px 14px rgba(16,24,40,.035);overflow:hidden}.ex-main{padding:15px}.ex-top{display:flex;align-items:flex-start;justify-content:space-between;gap:14px}.ex-top h3{display:flex;align-items:baseline;gap:8px;margin:0;font-size:1.08rem}.tag{display:inline-block;font-size:.72rem;padding:3px 7px;border-radius:999px;background:#f0f2f5;color:#475467;flex-shrink:0}.tag.db{background:var(--soft);color:#1849a9}.scheme{font-weight:700;white-space:nowrap}.cue{margin:7px 0 10px;color:#475467}.external{font-size:.84rem;text-decoration:none}.external:hover{text-decoration:underline}
-.logtable{width:100%;border-collapse:collapse;margin-top:10px}.logtable th,.logtable td{border:1px solid #d3d6db;padding:7px;text-align:center}.logtable th{background:#f5f6f7;font-size:.82rem}.logtable input[type=number]{width:100%;min-width:58px;border:1px solid var(--line);border-radius:7px;padding:6px;background:#fff}.donebox{width:19px;height:19px}
-details{border-top:1px solid var(--line2);background:#fbfcfd}details summary{cursor:pointer;padding:10px 15px;font-weight:650}.detailbody{padding:0 15px 15px}.diagram{display:block;width:100%;max-height:620px;object-fit:contain;background:#111;border-radius:10px;border:1px solid var(--line);margin-top:10px}.diagram-note{font-size:.82rem;color:var(--muted)}
-.guidance{display:block;margin-top:10px;border:1px solid var(--line2);border-radius:8px;background:#fbfcfd;font-size:.875rem;font-weight:650}.external.guidance{padding:10px 15px}.previous{color:var(--muted);font-size:.82rem;overflow-wrap:anywhere}
-.rest{margin-top:8px;background:#fff;border:1px solid var(--line);border-radius:14px;box-shadow:var(--shadow);padding:10px;display:flex;align-items:center;gap:8px}.rest strong{min-width:48px;text-align:center;font-variant-numeric:tabular-nums}.small{font-size:.82rem;color:var(--muted)}
-.footer{padding:30px 0;color:var(--muted);font-size:.85rem}.hidden{display:none!important}
-button:focus-visible,a:focus-visible,input:focus-visible,summary:focus-visible{outline:3px solid var(--accent);outline-offset:3px}
-@media(max-width:680px){
-  .wrap{padding:12px}
-  .sticky{margin:14px -12px 0;padding:8px 12px}
-  .daynav{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:6px;overflow:visible}
-  .daynav button{white-space:normal;padding:8px 4px;font-size:.85rem}
-  .btn{min-height:44px}
-  .hero{padding:17px}
-  .summary table{min-width:0;table-layout:fixed}
-  .summary th,.summary td{padding:9px 7px;overflow-wrap:anywhere;font-size:.875rem}
-  .summary th:first-child{width:14%}
-  .summary th:nth-child(2){width:30%}
-  .ex-main{padding:12px}
-  .ex-top{display:block}
-  .scheme{margin-top:6px}
-  .progress{min-width:0;width:100%}
-  .logtable{table-layout:fixed}
-  .logtable th,.logtable td{padding:4px}
-  .logtable th:first-child{width:10%}
-  .logtable th:nth-child(2){width:25%}
-  .logtable th{font-size:.72rem;overflow-wrap:anywhere}
-  .logtable th:last-child{width:15%}
-  .logtable input[type=number]{min-width:0;min-height:44px;padding:5px;font-size:16px}
-  .donebox{width:24px;height:24px;margin:0;vertical-align:middle}
-  .rest{justify-content:center;gap:5px;padding:8px}
-  .rest .btn{padding:8px;font-size:.875rem}
-  .rest strong{min-width:40px}
-  .diagram{max-height:none}
-}
-@media print{.sticky,.rest,.toolbar,.logtable{display:none!important}.day{display:block!important}.exercise{break-inside:avoid;box-shadow:none}.wrap{max-width:none}.hero{box-shadow:none}}
-</style>
+<link rel="stylesheet" href="styles.css">
 </head>
 <body>
 <div class="wrap">
 <header class="hero">
-  <h1>5-Day Resistance Training Plan</h1>
+  <h1>5-Day Training Plan</h1>
   <p><strong>Inflight Fitness 3070 + dumbbells</strong></p>
   <p>Warm up 5–8 minutes <br/>Volume: 2–4 sets per exercise, 8–15 reps each. <br/>Use controlled tempo, work around RPE 7–9.<br/>Rest 60–120 seconds.</p>
-  <div class="toolbar"><button class="btn primary" id="resetWeek">Reset week</button><button class="btn" onclick="window.print()">Print plan</button><span class="small" id="saveStatus">Progress saves automatically on this device. Reset week saves completed sets to Previous.</span></div>
+  <div class="toolbar"><button class="btn primary" id="resetWeek">Reset week</button><button class="btn" onclick="window.print()">Print plan</button><span class="small" id="saveStatus">Progress saves automatically on this device<br/>Reset week saves completed sets to Previous.</span></div>
 </header>
 
 <section class="summary">
 <table><thead><tr><th>Day</th><th>Focus</th><th>Exercises</th></tr></thead><tbody>
-<tr><td>1</td><td>Push strength</td><td>Chest press<br>Shoulder press<br>Tricep pushdown<br>DB lateral raise</td></tr>
-<tr><td>2</td><td>Pull strength</td><td>Lat pulldown<br>Seated row<br>Bicep curl<br>DB rear delt fly<br>DB hammer curl</td></tr>
-<tr><td>3</td><td>Legs</td><td>Leg extension<br>Leg curl<br>DB goblet squat<br>DB Romanian deadlift<br>DB calf raise</td></tr>
-<tr><td>4</td><td>Upper volume</td><td>Incline press<br>Lat pulldown<br>Seated row<br>Tricep pushdown<br>DB bench press<br>DB pullover</td></tr>
-<tr><td>5</td><td>Lower + full body</td><td>Decline press<br>Leg extension<br>Leg curl<br>DB reverse lunge<br>DB farmer carry</td></tr>
+<tr><td>1</td><td>Push strength</td><td>Chest press<br>Shoulder press<br>Tricep pushdown<br>Lateral raise</td></tr>
+<tr><td>2</td><td>Pull strength</td><td>Lat pulldown<br>Seated row<br>Bicep curl<br>Rear delt fly<br>Hammer curl</td></tr>
+<tr><td>3</td><td>Legs</td><td>Leg extension<br>Leg curl<br>Goblet squat<br>Romanian deadlift<br>Calf raise</td></tr>
+<tr><td>4</td><td>Upper volume</td><td>Incline press<br>Lat pulldown<br>Seated row<br>Tricep pushdown<br>Bench press<br>Pullover</td></tr>
+<tr><td>5</td><td>Lower + full body</td><td>Decline press<br>Leg extension<br>Leg curl<br>Reverse lunge<br>Farmer carry</td></tr>
 </tbody></table>
 </section>
 
@@ -81,34 +34,11 @@ button:focus-visible,a:focus-visible,input:focus-visible,summary:focus-visible{o
 </div>
 
 <main id="days"></main>
-<footer class="footer">Progress data stored in-browser via localStorage.<br/>GitHub Pages hosts this as a static site; no server or database required.</footer>
+<footer class="footer">Progress stored in browser localStorage; static site hosted by GitHub Pages</footer>
 </div>
 
+<script src="exercises.js"></script>
 <script>
-const machine={
-  chest:{name:'Chest press',scheme:'3–4 × 6–10',cue:'Set handles at mid-chest; exhale while pressing to full extension; inhale while returning slowly and under control.',details:'Use press position 2 (Chest). Adjust the seat so the lower horizontal handle of the press arm is at mid-chest level. Select the desired weight. Exhale while pushing out to full extension. Inhale while returning to the starting position in a slow and controlled manner.',img:'assets/press-positions.jpeg'},
-  shoulder:{name:'Shoulder press',scheme:'3 × 8–12',cue:'Match press arm and seat-back position 4; press overhead under control.',details:'Use press position 4 (Shoulder). Match the number on the press arm to the corresponding number on the seat back. Adjust the seat, select the desired weight, press to full extension, then return slowly and under control.',img:'assets/press-positions.jpeg'},
-  incline:{name:'Incline press',scheme:'3 × 8–12',cue:'Match press arm and seat-back position 3; press smoothly; return slowly.',details:'Use press position 3 (Incline). Match press-arm and seat-back numbers. Adjust the seat so the lower horizontal handle is appropriately aligned, select the desired weight, press to full extension, and return slowly.',img:'assets/press-positions.jpeg'},
-  decline:{name:'Decline press',scheme:'3 × 8–12',cue:'Match press arm and seat-back position 1; press to full extension; return slowly.',details:'Use press position 1 (Decline). Match press-arm and seat-back numbers, select the desired weight, press to full extension, and return to the start slowly and under control.',img:'assets/press-positions.jpeg'},
-  lat:{name:'Lat pulldown',scheme:'3–4 × 8–12',cue:'Knees under thigh pad; pull the bar toward the upper chest; return slowly.',details:'Adjust the arm/thigh pad so it rests against your thighs when seated. Select weight. Grip the lat bar. Slide knees under the pad. Exhale while pulling the bar toward your upper chest. Inhale while returning slowly and under control.',img:'assets/lat-pulldown.jpeg'},
-  row:{name:'Seated row',scheme:'3–4 × 8–12',cue:'Brace feet; pull the handle toward the mid-section; control the reach forward.',details:'Select weight. Sit on the floor with feet securely against the low tube. With torso slightly bent, reach forward while grasping the handles or bar with palms facing down. Exhale while pulling toward your mid-section. Inhale while returning slowly and under control.',img:'assets/seated-row.jpeg'},
-  biceps:{name:'Bicep curl',scheme:'3 × 10–15',cue:'Palms up; curl handles or bar toward the chest; lower slowly.',details:'Select weight. Stand facing the machine. Grasp handles or bar with palms facing up and slowly curl toward your chest. Inhale while returning to the start slowly and under control.',img:'assets/bicep-curl.jpeg'},
-  triceps:{name:'Tricep pushdown',scheme:'3 × 10–15',cue:'Palms down, elbows pinned; extend down fully; return slowly.',details:'Stand straddling the seat pad so you can reach the lat bar. Select weight. Grasp the bar palms down, shoulder-width apart. Exhale while extending downward to full extension. Inhale while returning slowly and under control.',img:'assets/tricep-pushdown.jpeg'},
-  legext:{name:'Leg extension',scheme:'3–4 × 10–15',cue:'Set rollers at ankle height; extend to full contraction; lower slowly.',details:'Select weight. Adjust the seat back pad to the inclined position. While seated, adjust lower rollers to ankle height. Position the backs of your knees against the front of the lower seat pad and the tops of your feet behind the rollers. Exhale while extending to full extension. Inhale while returning slowly and under control.',img:'assets/leg-extension.jpeg'},
-  legcurl:{name:'Leg curl',scheme:'3–4 × 10–15',cue:'Prone on pads; ankles under rollers; curl toward buttocks; control the return.',details:'Select weight. Adjust the seat back pad to the declined position. Lie face down against the seat pads. Position knees slightly beyond the front of the lower seat pad and the backs of the ankles under the upper roller pads. Exhale while bringing legs toward the buttocks to a full contraction. Inhale while returning slowly and under control.',img:'assets/leg-curl.jpeg'}
-};
-const db={
- lateral:{name:'DB lateral raise',scheme:'2–3 × 12–20',cue:'Keep a slight elbow bend; raise to shoulder height; lower under control.',url:'https://www.muscleandstrength.com/exercises/dumbbell-lateral-raise'},
- rearfly:{name:'DB rear delt fly',scheme:'2–3 × 12–20',cue:'Hinge at the hips; sweep arms out; keep shoulders down and movement controlled.',url:'https://www.muscleandstrength.com/exercises/bent-over-dumbbell-reverse-fly.html'},
- hammer:{name:'DB hammer curl',scheme:'2–3 × 10–15',cue:'Use a neutral grip; curl without swinging; lower slowly.',url:'https://www.muscleandstrength.com/exercises/dumbbell-hammer-curl.html'},
- goblet:{name:'DB goblet squat',scheme:'3 × 8–12',cue:'Hold one dumbbell at chest; squat with a braced torso; stand tall.',url:'https://www.muscleandstrength.com/exercises/dumbbell-goblet-squat'},
- rdl:{name:'DB Romanian deadlift',scheme:'3 × 8–12',cue:'Hinge hips back with a slight knee bend; load the hamstrings; stand by driving the hips through.',url:'https://www.muscleandstrength.com/exercises/dumbbell-romanian-deadlift'},
- calf:{name:'DB calf raise',scheme:'2–4 × 12–20',cue:'Hold dumbbells; rise onto toes; pause; lower into a controlled stretch.',url:'https://www.muscleandstrength.com/exercises/standing-dumbbell-calf-raise.html'},
- bench:{name:'DB bench press',scheme:'2–3 × 8–12',cue:'Start with dumbbells over the chest; lower under control; press evenly.',url:'https://www.muscleandstrength.com/exercises/dumbbell-bench-press.html'},
- pullover:{name:'DB pullover',scheme:'2–3 × 10–15',cue:'Keep ribs down; lower the dumbbell behind the head gently; pull it back over the chest.',url:'https://www.muscleandstrength.com/exercises/dumbbell-pullover.html'},
- lunge:{name:'DB reverse lunge',scheme:'3 × 8–12 / leg',cue:'Step back; keep the front shin controlled; drive through the front foot.',url:'https://www.muscleandstrength.com/exercises/dumbbell-rear-lunge.html'},
- carry:{name:'DB farmer carry',scheme:'4 × 30–60 sec',cue:'Keep tall posture and ribs down; walk with controlled steps.',url:'https://www.muscleandstrength.com/exercises/dumbbell-farmers-walk.html'}
-};
 const plan=[
  {title:'Day 1: Push strength',sub:'Targets: Chest, shoulders, triceps',items:[machine.chest,machine.shoulder,machine.triceps,db.lateral]},
  {title:'Day 2: Pull strength',sub:'Targets: Back, biceps, rear delts',items:[machine.lat,machine.row,machine.biceps,db.rearfly,db.hammer]},
@@ -140,13 +70,10 @@ function archiveWeek(){
   localStorage.setItem(historyKey,JSON.stringify(history));
 }
 function exerciseCard(ex,di,ei){
-  const dbx=!!ex.url,n=maxSets(ex.scheme);
+  const dbx=!!ex.video,n=maxSets(ex.scheme);
   let rows='';
   for(let set=1;set<=n;set++)rows+=`<tr><td>${set}</td><td class="previous">${previousSet(ex,set)}</td><td><input type="number" inputmode="decimal" min="0" step="0.5" data-key="d${di}e${ei}s${set}w" aria-label="Weight set ${set}"></td><td><input type="number" inputmode="numeric" min="0" step="1" data-key="d${di}e${ei}s${set}r" aria-label="Reps set ${set}"></td><td><input class="donebox" type="checkbox" data-key="d${di}e${ei}s${set}d" aria-label="Complete set ${set}"></td></tr>`;
-  const guidance=dbx
-    ? `<a class="external guidance" href="${ex.url}" target="_blank" rel="noopener">Open exercise demo ↗</a>`
-    : `<details class="guidance"><summary>Instructions + Inflight diagram</summary><div class="detailbody"><p>${ex.details}</p><p class="diagram-note">Original inflight instruction image shown in full:</p><img class="diagram" src="${ex.img}" alt="${ex.name} Inflight Fitness 3070 instruction diagram" loading="lazy"></div></details>`;
-  return `<article class="exercise"><div class="ex-main"><div class="ex-top"><h3><span class="tag ${dbx?'db':''}">${dbx?'Dumbbell':'Inflight 3070'}</span><span>${ex.name}</span></h3><div class="scheme">${ex.scheme}</div></div>${guidance}<p class="cue">${ex.cue}</p><table class="logtable"><thead><tr><th scope="col">Set</th><th scope="col" title="Last completed workout saved when resetting the week">Previous</th><th scope="col">Weight</th><th scope="col">Reps / sec</th><th scope="col">Done</th></tr></thead><tbody>${rows}</tbody></table></div></article>`;
+  return `<article class="exercise"><div class="ex-main"><div class="ex-top"><h3><a class="tag ${dbx?'db':''}" href="exercises.html#${exerciseId(ex)}" aria-label="View ${exerciseName(ex)} in the exercise library">${dbx?'Dumbbell':'Inflight 3070'}</a><span>${exerciseName(ex)}</span></h3><div class="scheme">${schemeLabel(ex.scheme)}</div></div><p class="cue">${ex.cue}</p>${exerciseGuidance(ex)}<table class="logtable"><thead><tr><th scope="col">Set</th><th scope="col" title="Last completed workout saved when resetting the week">Previous</th><th scope="col">Weight</th><th scope="col">Reps / sec</th><th scope="col">Done</th></tr></thead><tbody>${rows}</tbody></table></div></article>`;
 }
 function render(){document.querySelector('#days').innerHTML=plan.map((d,di)=>`<section class="day ${di===0?'active':''}" data-daypanel="${di+1}"><div class="day-head"><div><h2>${d.title}</h2><p>${d.sub}.<br/>Progression: add reps first, then weight.<br/>Stop if joint pain changes movement quality.</p></div></div>${d.items.map((e,ei)=>exerciseCard(e,di+1,ei+1)).join('')}</section>`).join('');restore();updateProgress()}
 function restore(){document.querySelectorAll('[data-key]').forEach(el=>{const v=localStorage.getItem('fit-'+el.dataset.key);if(v!==null){if(el.type==='checkbox')el.checked=v==='1';else el.value=v}el.addEventListener('input',save);el.addEventListener('change',save)})}
