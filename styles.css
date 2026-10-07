@@ -19,8 +19,8 @@ button:focus-visible,a:focus-visible,input:focus-visible,summary:focus-visible{o
 @media(max-width:680px){
   .wrap{padding:12px}
   .sticky{margin:14px -12px 0;padding:8px 12px}
-  .daynav{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:6px;overflow:visible}
-  .daynav button{white-space:normal;padding:8px 4px;font-size:.85rem}
+  .daynav{display:grid;grid-template-columns:repeat(5,minmax(0,1fr));gap:4px;overflow:visible}
+  .daynav button{min-width:0;white-space:normal;padding:6px 2px;font-size:.75rem;line-height:1.2}
   .btn{min-height:44px}
   .hero{padding:17px}
   .summary table{min-width:0;table-layout:fixed}
