@@ -18,11 +18,11 @@
 
 <section class="summary">
 <table><thead><tr><th>Day</th><th>Focus</th><th>Exercises</th></tr></thead><tbody>
-<tr><td>1</td><td>Push strength</td><td>Chest press<br>Shoulder press<br>Tricep pushdown<br>Lateral raise</td></tr>
-<tr><td>2</td><td>Pull strength</td><td>Lat pulldown<br>Seated row<br>Bicep curl<br>Rear delt fly<br>Hammer curl</td></tr>
-<tr><td>3</td><td>Legs</td><td>Leg extension<br>Leg curl<br>Goblet squat<br>Romanian deadlift<br>Calf raise</td></tr>
-<tr><td>4</td><td>Upper volume</td><td>Incline press<br>Lat pulldown<br>Seated row<br>Tricep pushdown<br>Bench press<br>Pullover</td></tr>
-<tr><td>5</td><td>Lower + full body</td><td>Decline press<br>Leg extension<br>Leg curl<br>Reverse lunge<br>Farmer carry</td></tr>
+<tr><td>1</td><td>Push strength</td><td>Chest press, Shoulder press, Tricep pushdown, Lateral raise</td></tr>
+<tr><td>2</td><td>Pull strength</td><td>Lat pulldown, Seated row, Bicep curl, Rear delt fly, Hammer curl</td></tr>
+<tr><td>3</td><td>Legs</td><td>Leg extension, Leg curl, Goblet squat, Romanian deadlift, Calf raise</td></tr>
+<tr><td>4</td><td>Upper volume</td><td>Incline press, Lat pulldown, Seated row, Tricep pushdown, Bench press, Pullover</td></tr>
+<tr><td>5</td><td>Lower + full body</td><td>Decline press, Leg extension, Leg curl, Reverse lunge, Farmer carry</td></tr>
 </tbody></table>
 </section>
 
@@ -73,7 +73,7 @@ function exerciseCard(ex,di,ei){
   const dbx=!!ex.video,n=maxSets(ex.scheme);
   let rows='';
   for(let set=1;set<=n;set++)rows+=`<tr><td>${set}</td><td class="previous">${previousSet(ex,set)}</td><td><input type="number" inputmode="decimal" min="0" step="0.5" data-key="d${di}e${ei}s${set}w" aria-label="Weight set ${set}"></td><td><input type="number" inputmode="numeric" min="0" step="1" data-key="d${di}e${ei}s${set}r" aria-label="Reps set ${set}"></td><td><input class="donebox" type="checkbox" data-key="d${di}e${ei}s${set}d" aria-label="Complete set ${set}"></td></tr>`;
-  return `<article class="exercise"><div class="ex-main"><div class="ex-top"><h3><a class="tag ${dbx?'db':''}" href="exercises.html#${exerciseId(ex)}" aria-label="View ${exerciseName(ex)} in the exercise library">${dbx?'Dumbbell':'Inflight 3070'}</a><span>${exerciseName(ex)}</span></h3><div class="scheme">${schemeLabel(ex.scheme)}</div></div><p class="cue">${ex.cue}</p>${exerciseGuidance(ex)}<table class="logtable"><thead><tr><th scope="col">Set</th><th scope="col" title="Last completed workout saved when resetting the week">Previous</th><th scope="col">Weight</th><th scope="col">Reps / sec</th><th scope="col">Done</th></tr></thead><tbody>${rows}</tbody></table></div></article>`;
+  return `<article class="exercise"><div class="ex-main"><div class="ex-top"><h3><a class="tag ${dbx?'db':''}" href="exercises.html#${exerciseId(ex)}" aria-label="View ${exerciseName(ex)} in the exercise library">${dbx?'Dumbbell':'Inflight 3070'}</a><span>${exerciseName(ex)}</span></h3></div>${muscleTags(ex)}<div class="scheme">${schemeLabel(ex.scheme)}</div><p class="cue">${ex.cue}</p>${exerciseGuidance(ex)}<table class="logtable"><thead><tr><th scope="col">Set</th><th scope="col" title="Last completed workout saved when resetting the week">Previous</th><th scope="col">Weight</th><th scope="col">Reps / sec</th><th scope="col">Done</th></tr></thead><tbody>${rows}</tbody></table></div></article>`;
 }
 function render(){document.querySelector('#days').innerHTML=plan.map((d,di)=>`<section class="day ${di===0?'active':''}" data-daypanel="${di+1}"><div class="day-head"><div><h2>${d.title}</h2><p>${d.sub}.<br/>Progression: add reps first, then weight.<br/>Stop if joint pain changes movement quality.</p></div></div>${d.items.map((e,ei)=>exerciseCard(e,di+1,ei+1)).join('')}</section>`).join('');restore();updateProgress()}
 function restore(){document.querySelectorAll('[data-key]').forEach(el=>{const v=localStorage.getItem('fit-'+el.dataset.key);if(v!==null){if(el.type==='checkbox')el.checked=v==='1';else el.value=v}el.addEventListener('input',save);el.addEventListener('change',save)})}

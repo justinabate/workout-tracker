@@ -49,3 +49,5 @@ button:focus-visible,a:focus-visible,input:focus-visible,summary:focus-visible{o
 a.tag{text-decoration:none}a.tag:hover{text-decoration:underline;background:var(--line2)}
 .library .exercise{scroll-margin-top:16px}.library .exercise:target{border-color:var(--accent);box-shadow:0 0 0 2px var(--soft)}
 .library h2{margin-top:28px}.library nav a{display:inline-block;min-height:44px;padding:10px 0;margin-right:20px}
+
+.muscle-tags{display:flex;flex-wrap:wrap;gap:6px;margin:8px 0}.muscle-tags .tag{background:var(--soft);color:#1849a9}

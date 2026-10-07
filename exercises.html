@@ -11,7 +11,8 @@
 <main class="wrap library">
 <header class="hero">
   <h1>Exercise library</h1>
-  <p>Browse exercises and expand their instructions or demo videos.</p>
+  <p id="library-description">Browse exercises and expand their instructions or demo videos.</p>
+  <a id="clear-filter" href="exercises.html" hidden>Show all exercises</a>
   <nav aria-label="Exercise library navigation"><a href="index.html">← Workout tracker</a><a href="#inflight-3070">Inflight 3070</a><a href="#dumbbell">Dumbbell</a></nav>
 </header>
 <section id="inflight-3070" aria-labelledby="inflight-heading"><h2 id="inflight-heading">Inflight 3070</h2><div id="machine-exercises"></div></section>
@@ -20,10 +21,19 @@
 <script src="exercises.js"></script>
 <script>
 function libraryCard(ex){
-  return `<article class="exercise" id="${exerciseId(ex)}"><div class="ex-main"><div class="ex-top"><h3>${exerciseName(ex)}</h3></div><p class="cue">${ex.cue}</p>${exerciseGuidance(ex)}</div></article>`;
+  return `<article class="exercise" id="${exerciseId(ex)}"><div class="ex-main"><div class="ex-top"><h3>${exerciseName(ex)}</h3></div>${muscleTags(ex)}<p class="cue">${ex.cue}</p>${exerciseGuidance(ex)}</div></article>`;
+}
+const requestedMuscle=new URLSearchParams(location.search).get('muscle');
+const muscle=[...new Set([...Object.values(machine),...Object.values(db)].flatMap(ex=>ex.muscles))].find(name=>name.toLowerCase()===requestedMuscle?.toLowerCase());
+if(muscle){
+  document.querySelector('h1').textContent=`${muscle} exercises`;
+  document.title=`${muscle} exercises — Exercise Library`;
+  document.getElementById('library-description').textContent=`Exercises targeting ${muscle.toLowerCase()}. Expand a diagram or video for guidance.`;
+  document.getElementById('clear-filter').hidden=false;
 }
 for(const [id,exercises] of [['machine-exercises',machine],['dumbbell-exercises',db]]){
-  document.getElementById(id).innerHTML=Object.values(exercises).sort((a,b)=>exerciseName(a).localeCompare(exerciseName(b))).map(libraryCard).join('');
+  const matches=Object.values(exercises).filter(ex=>!muscle || ex.muscles.includes(muscle));
+  document.getElementById(id).innerHTML=matches.length?matches.sort((a,b)=>exerciseName(a).localeCompare(exerciseName(b))).map(libraryCard).join(''):'<p class="small">No matching exercises in this section.</p>';
 }
 // Scroll after rendering so direct links work on a fresh page load.
 function scrollToExercise(){
